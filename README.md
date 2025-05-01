@@ -6,6 +6,8 @@
 
 - `poetry.json`：包含所有 60 篇古诗文的完整内容，每篇文章以 JSON 对象存储，字段包括标题、作者和内容。每篇文章以 `title`（标题）、`author`（作者）和 `content`（内容）字段存储。
 - `sentences.json`：将文章拆分为句子形式，便于逐句学习和分析。每篇文章以 `title`（标题）、`author`（作者）和 `content`（句子数组）字段存储。
+- `hitokoto.js`：一个简单的 JavaScript 模块，可供处理 `sentences.json` 文件中的句子，实现 Hitokoto 风格的随机句子输出。
+- `example.html`：包含一个简单的网页，展示 `hitokoto.js` 模块的使用方法。可以直接在浏览器中打开查看效果。
 
 ## 注意
 

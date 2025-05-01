@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hitokoto Display</title>
+</head>
+<body>
+  <h1>Random Hitokoto</h1>
+  <div id="hitokoto-display">
+    <p id="hitokoto"></p>
+    <p>— <span id="author"></span>《<span id="title"></span>》</p>
+  </div>
+
+  <script type="module">
+    import { getHitokoto } from "./hitokoto.js";
+
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('./sentences.json').then(response => response.json()).then(data => {
+        getHitokoto(data).then(hitokoto => {
+          document.getElementById('hitokoto').textContent = hitokoto.hitokoto;
+          document.getElementById('author').textContent = `${hitokoto.from_who || 'Unknown'}`;
+          document.getElementById('title').textContent = `${hitokoto.from || 'Unknown'}`;
+        }).catch(error => console.error('Error fetching hitokoto:', error));
+      });
+    });
+  </script>
+
+  <footer>
+    <p>Powered by <a href="https://github.com/clover-yan/gaokao-poetry" target="_blank">gaokao-poetry</a> of <a href="https://www.khyan.top/" target="_blank">Clover Yan</a></p>
+  </footer>
+</body>
+</html>
