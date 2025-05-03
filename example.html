@@ -20,7 +20,7 @@
         getHitokoto(data).then(hitokoto => {
           document.getElementById('hitokoto').textContent = hitokoto.hitokoto;
           document.getElementById('author').textContent = `${hitokoto.from_who || 'Unknown'}`;
-          document.getElementById('title').textContent = `${hitokoto.from || 'Unknown'}`;
+          document.getElementById('title').textContent = `${hitokoto.from || 'Unknown'}`.replace(/《/g, '〈',).replace(/》/g, '〉');
         }).catch(error => console.error('Error fetching hitokoto:', error));
       });
     });
