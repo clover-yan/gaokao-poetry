@@ -6,6 +6,8 @@
 // Project: gaokao-poetry https://github.com/clover-yan/gaokao-poetry
 // Author: Clover Yan https://www.khyan.top
 
+// gaokao-poetry © 2025 by Clover Yan is licensed under CC BY-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/
+
 /**
  * Retrieves a random sentence (hitokoto) from a collection of poetry objects.
  *
